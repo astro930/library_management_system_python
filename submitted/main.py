@@ -18,7 +18,7 @@ def main():
     # Ucapan pembuka sistem
     print("\n=== PERPUSTAKAAN KAMPUS NUSANTARA ===\n")
 
-    # daftar anggota baru
+    # login atau daftar anggota baru
     print("Untuk melakukan peminjaman, silahkan login terlebih dahulu atau lakukan pendaftaran jika belum menjadi member!")
     
     while True:
@@ -49,7 +49,7 @@ def main():
                 else:
                     print("NIM/NIK sudah terdaftar, silakan login !")
                     break
-        # login member 
+
         elif login_or_daftar == "1":
             print("\n"*20)
             print("== LOGIN ==")
@@ -193,27 +193,26 @@ def main():
                                         break
                                     else:
                                         temp_list =[]
-                                        # id_pinjam = 0
-                                        # id_siswa = ""
-                                        # id_buku = 0
-                                        # judul_buku = ""
-                                        # tanggal_pinjam = ""
-                                        # durasi_pinjam = 0
-                                        # tanggal_kembali = ""
+                                        id_pinjam = 0
+                                        id_siswa = ""
+                                        id_buku = 0
+                                        judul_buku = ""
+                                        tanggal_pinjam = ""
+                                        durasi_pinjam = 0
+                                        tanggal_kembali = ""
                                         print("Masukkan status approval !")
                                         for item in data_peminjaman:
                                             if item["id_pinjam"] == pilih_peminjaman:
-                                                # id_pinjam = item["id_pinjam"]
-                                                # id_siswa  = item["id_siswa"]
-                                                # id_buku = item["id_buku"]
-                                                # judul_buku = item["judul_buku"]
-                                                # tanggal_pinjam = item["tanggal_pinjam"]
-                                                # durasi_pinjam = item["durasi_pinjam"]
-                                                # tanggal_kembali = item["tanggal_kembali"]
-                                                # durasi_pinjam =item["durasi_pinjam"]
-                                                temp_list.append(item)
+                                                id_pinjam = item["id_pinjam"]
+                                                id_siswa  = item["id_siswa"]
+                                                id_buku = item["id_buku"]
+                                                judul_buku = item["judul_buku"]
+                                                tanggal_pinjam = item["tanggal_pinjam"]
+                                                durasi_pinjam = item["durasi_pinjam"]
+                                                tanggal_kembali = item["tanggal_kembali"]
+                                                durasi_pinjam =item["durasi_pinjam"]
                                         status = input("Approval Status".ljust(20)+":").capitalize()
-                                        # temp_list.append({"id_pinjam": id_pinjam, "id_siswa": id_siswa, "id_buku":id_buku,"judul_buku":judul_buku,"tanggal_pinjam":tanggal_pinjam, "durasi_pinjam": durasi_pinjam ,"tanggal_kembali": tanggal_kembali,"status": status})
+                                        temp_list.append({"id_pinjam": id_pinjam, "id_siswa": id_siswa, "id_buku":id_buku,"judul_buku":judul_buku,"tanggal_pinjam":tanggal_pinjam, "durasi_pinjam": durasi_pinjam ,"tanggal_kembali": tanggal_kembali,"status": status})
                                         print("\nBerikut adalah summary approval: ")
                                         show_data(temp_list)
                                         print("""
